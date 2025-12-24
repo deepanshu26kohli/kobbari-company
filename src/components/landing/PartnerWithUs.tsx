@@ -70,7 +70,7 @@ export default function PartnerWithUs({ onOpenInquiry }: PartnerWithUsProps) {
 
                 <div className="text-center border-t border-white/10 pt-8 mt-12">
                     <p className="text-gray-400">
-                        We're not disrupting our business model—we're <span className="text-white">elevating it</span> to capture the value our quality and relationships have always deserved.
+                        We're not disrupting our business model we're <span className="text-white">elevating it</span> to capture the value our quality and relationships have always deserved.
                     </p>
                 </div>
             </div>

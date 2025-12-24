@@ -19,7 +19,7 @@ export default function FoundationSection() {
 
                         <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                             <p>
-                                For 30 years, <span className="font-semibold text-gray-900">The Kobbari Company</span> has been the cornerstone of copra trading in Arsikere, one of India's most productive coconut-growing regions. Our longevity isn't just about time—it's about relationships built on mutual respect, fair pricing, and unwavering reliability.
+                                For 30 years, <span className="font-semibold text-gray-900">The Kobbari Company</span> has been the cornerstone of copra trading in Arsikere, one of India's most productive coconut-growing regions. Our longevity isn't just about time it's about relationships built on mutual respect, fair pricing, and unwavering reliability.
                             </p>
                             <p>
                                 We've cultivated direct partnerships with local farming families. These aren't transactional relationships; they're bonds forged through consistent support, transparent dealings, and shared prosperity.

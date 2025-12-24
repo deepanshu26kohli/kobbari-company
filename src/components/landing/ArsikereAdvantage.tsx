@@ -28,7 +28,7 @@ export default function ArsikereAdvantage() {
                     <h2 className="text-sm font-bold text-green-600 uppercase tracking-widest mb-2">Regional Excellence</h2>
                     <h3 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif mb-6">The Arsikere Advantage</h3>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Arsikere's unique geography and climate create ideal conditions for coconut cultivation. The region's red laterite soil, consistent rainfall patterns, and traditional farming practices produce coconuts with <span className="text-green-800 font-medium">superior oil content and moisture balance</span>—the hallmarks of premium copra.
+                        Arsikere's unique geography and climate create ideal conditions for coconut cultivation. The region's red laterite soil, consistent rainfall patterns, and traditional farming practices produce coconuts with <span className="text-green-800 font-medium">superior oil content and moisture balance</span>the hallmarks of premium copra.
                     </p>
                 </div>
 

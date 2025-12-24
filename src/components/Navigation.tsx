@@ -11,8 +11,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    // { id: 'products', label: 'Products' },
-    // { id: 'about', label: 'About Us' },
+    { id: 'products', label: 'Products' },
+    { id: 'about', label: 'About Us' },
   ];
 
   return (
@@ -35,10 +35,15 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => onNavigate(item.id)}
+                onClick={() => {
+                  if (item.id === 'home') {
+                    onNavigate(item.id)
+                  }
+
+                }}
                 className={`text-sm font-medium transition-colors ${currentPage === item.id
-                    ? 'text-green-800 border-b-2 border-green-800'
-                    : 'text-gray-600 hover:text-green-800'
+                  ? 'text-green-800 border-b-2 border-green-800'
+                  : 'text-gray-600 hover:text-green-800'
                   } pb-1`}
               >
                 {item.label}

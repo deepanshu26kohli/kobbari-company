@@ -92,7 +92,7 @@ export default function About({ onOpenInquiry }: AboutProps) {
                   Our success is rooted in a simple philosophy: build lasting relationships with farmers and buyers through transparency, fair practices, and consistent quality. Today, we work with over 200 farming families, providing them with stable income and market access while delivering reliable bulk supply to our B2B partners.
                 </p>
                 <p>
-                  We've witnessed the coconut industry evolve, and through changing market dynamics, one thing has remained constant—our commitment to quality and reliability. Every shipment carries the promise of three decades of expertise and trust.
+                  We've witnessed the coconut industry evolve, and through changing market dynamics, one thing has remained constant our commitment to quality and reliability. Every shipment carries the promise of three decades of expertise and trust.
                 </p>
                 <p className="font-semibold text-green-900">
                   Whether you're a coconut oil manufacturer, food processor, or exporter, partnering with The Kobbari Company means partnering with stability, scale, and unmatched sourcing strength.
@@ -138,7 +138,7 @@ export default function About({ onOpenInquiry }: AboutProps) {
               Sourcing & Quality Assurance
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From farm to factory—our comprehensive approach to quality control and ethical sourcing
+              From farm to factory our comprehensive approach to quality control and ethical sourcing
             </p>
           </div>
 
@@ -186,7 +186,7 @@ export default function About({ onOpenInquiry }: AboutProps) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-6">
               <p className="text-gray-700 text-lg">
-                Karnataka is home to one of India's most productive coconut belts, with ideal climate conditions, rich soil, and generations of farming expertise. The region produces high-quality coconuts with superior oil content and consistent characteristics—making it the preferred source for manufacturers and exporters.
+                Karnataka is home to one of India's most productive coconut belts, with ideal climate conditions, rich soil, and generations of farming expertise. The region produces high-quality coconuts with superior oil content and consistent characteristics making it the preferred source for manufacturers and exporters.
               </p>
               <p className="text-gray-700 text-lg">
                 Our strategic location in this belt gives us direct access to premium coconuts year-round. We've built relationships with farming communities across multiple districts, ensuring supply continuity even during seasonal variations.

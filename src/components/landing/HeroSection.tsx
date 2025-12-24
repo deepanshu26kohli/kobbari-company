@@ -68,7 +68,7 @@ export default function HeroSection({ onOpenInquiry }: HeroSectionProps) {
       ))}
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-        <h2 className="text-green-300 font-medium tracking-widest text-sm md:text-base uppercase mb-4 animate-fade-in">
+        <h2 className="text-white font-medium tracking-widest text-sm md:text-base uppercase mb-4 animate-fade-in">
           The Kobbari Company
         </h2>
 
@@ -106,7 +106,7 @@ export default function HeroSection({ onOpenInquiry }: HeroSectionProps) {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="absolute bottom-10 left-0 right-0 flex justify-center space-x-2">
+        <div className="absolute bottom-[-10%] left-0 right-0 flex justify-center space-x-2">
           {slides.map((_, index) => (
             <button
               key={index}
