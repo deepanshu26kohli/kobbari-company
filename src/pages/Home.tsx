@@ -10,7 +10,6 @@ import CompetitiveDifferentiation from '../components/landing/CompetitiveDiffere
 import PartnerWithUs from '../components/landing/PartnerWithUs';
 
 interface HomeProps {
-  onNavigate: (page: string) => void;
   onOpenInquiry: () => void;
 }
 

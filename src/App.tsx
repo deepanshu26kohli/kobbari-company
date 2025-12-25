@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import InquiryModal from './components/InquiryModal';
@@ -7,14 +8,19 @@ import Products from './pages/Products';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
-function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-  const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
-  const handleNavigate = (page: string) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+function App() {
+  const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
+  const location = useLocation();
 
   const handleOpenInquiry = () => {
     setIsInquiryModalOpen(true);
@@ -25,34 +31,30 @@ function App() {
   };
 
   useEffect(() => {
-    if (currentPage === 'home') {
+    const path = location.pathname;
+    if (path === '/') {
       document.title = 'The Kobbari Company - Premium Bulk Coconut & Copra Supplier from India';
-    } else if (currentPage === 'products') {
+    } else if (path === '/products') {
       document.title = 'B2B Product Catalog - The Kobbari Company';
-    } else if (currentPage === 'about') {
+    } else if (path === '/about') {
       document.title = 'About Us & Sourcing - The Kobbari Company';
-    } else if (currentPage === 'contact') {
+    } else if (path === '/contact') {
       document.title = 'Contact Us - The Kobbari Company';
     }
-  }, [currentPage]);
+  }, [location]);
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
+      <ScrollToTop />
+      <Navigation onOpenInquiry={handleOpenInquiry} />
 
       <main>
-        {currentPage === 'home' && (
-          <Home onNavigate={handleNavigate} onOpenInquiry={handleOpenInquiry} />
-        )}
-        {currentPage === 'products' && (
-          <Products onOpenInquiry={handleOpenInquiry} />
-        )}
-        {currentPage === 'about' && (
-          <About onOpenInquiry={handleOpenInquiry} />
-        )}
-        {currentPage === 'contact' && (
-          <Contact />
-        )}
+        <Routes>
+          <Route path="/" element={<Home onOpenInquiry={handleOpenInquiry} />} />
+          <Route path="/products" element={<Products onOpenInquiry={handleOpenInquiry} />} />
+          <Route path="/about" element={<About onOpenInquiry={handleOpenInquiry} />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
 
       <Footer />

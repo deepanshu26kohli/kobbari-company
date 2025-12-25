@@ -1,26 +1,32 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 
 interface NavigationProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
+  onOpenInquiry: () => void;
 }
 
-export default function Navigation({ currentPage, onNavigate }: NavigationProps) {
+export default function Navigation({ onOpenInquiry }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'products', label: 'Products' },
-    { id: 'about', label: 'About Us' },
-    { id: 'contact', label: 'Contact Us' },
+    { id: '/', label: 'Home' },
+    { id: '/products', label: 'Products' },
+    { id: '/about', label: 'About Us' },
+    { id: '/contact', label: 'Contact Us' },
   ];
+
+  const handleMobileNav = (path: string) => {
+    navigate(path);
+    setMobileMenuOpen(false);
+  };
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center cursor-pointer" onClick={() => onNavigate('home')}>
+          <Link to="/" className="flex items-center cursor-pointer">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-xl">K</span>
@@ -30,33 +36,28 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 <p className="text-xs text-green-700">Premium Bulk Supply</p>
               </div>
             </div>
-          </div>
+          </Link>
 
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <button
+              <NavLink
                 key={item.id}
-                onClick={() => {
-                  // if (item.id === 'home') {
-                  onNavigate(item.id)
-                  // }
-
-
-
-                }}
-                className={`text-sm font-medium transition-colors ${currentPage === item.id
-                  ? 'text-green-800 border-b-2 border-green-800'
-                  : 'text-gray-600 hover:text-green-800'
-                  } pb-1`}
+                to={item.id}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors pb-1 ${isActive
+                    ? 'text-green-800 border-b-2 border-green-800'
+                    : 'text-gray-600 hover:text-green-800'
+                  }`
+                }
               >
                 {item.label}
-              </button>
+              </NavLink>
             ))}
           </div>
 
           <div className="hidden md:block">
             <button
-              onClick={() => onNavigate('home')}
+              onClick={onOpenInquiry}
               className="bg-green-800 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-green-900 transition-colors"
             >
               Request Quote
@@ -76,19 +77,15 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => {
-                  onNavigate(item.id);
-                  setMobileMenuOpen(false);
-                }}
-                className={`block w-full text-left px-4 py-3 text-sm font-medium ${currentPage === item.id ? 'text-green-800 bg-green-50' : 'text-gray-600'
-                  }`}
+                onClick={() => handleMobileNav(item.id)}
+                className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-green-800 hover:bg-green-50"
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={() => {
-                onNavigate('home');
+                onOpenInquiry();
                 setMobileMenuOpen(false);
               }}
               className="w-full mt-4 bg-green-800 text-white px-6 py-2 rounded-md text-sm font-medium"
