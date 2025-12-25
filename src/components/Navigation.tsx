@@ -37,9 +37,9 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               <button
                 key={item.id}
                 onClick={() => {
-                  if (item.id === 'home') {
-                    onNavigate(item.id)
-                  }
+                  // if (item.id === 'home') {
+                  onNavigate(item.id)
+                  // }
 
 
 
