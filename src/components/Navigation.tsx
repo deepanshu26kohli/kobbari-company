@@ -13,6 +13,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     { id: 'home', label: 'Home' },
     { id: 'products', label: 'Products' },
     { id: 'about', label: 'About Us' },
+    { id: 'contact', label: 'Contact Us' },
   ];
 
   return (
@@ -39,6 +40,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                   if (item.id === 'home') {
                     onNavigate(item.id)
                   }
+
+
 
                 }}
                 className={`text-sm font-medium transition-colors ${currentPage === item.id

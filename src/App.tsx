@@ -5,6 +5,7 @@ import InquiryModal from './components/InquiryModal';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -30,6 +31,8 @@ function App() {
       document.title = 'B2B Product Catalog - The Kobbari Company';
     } else if (currentPage === 'about') {
       document.title = 'About Us & Sourcing - The Kobbari Company';
+    } else if (currentPage === 'contact') {
+      document.title = 'Contact Us - The Kobbari Company';
     }
   }, [currentPage]);
 
@@ -46,6 +49,9 @@ function App() {
         )}
         {currentPage === 'about' && (
           <About onOpenInquiry={handleOpenInquiry} />
+        )}
+        {currentPage === 'contact' && (
+          <Contact />
         )}
       </main>
 

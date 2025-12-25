@@ -1,5 +1,6 @@
 import { Heart, Users, Shield, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
-
+import coprabags from "../assets/images/copra-bags.png"
+import coprafarming from "../assets/images/copra-farming.png"
 interface AboutProps {
   onOpenInquiry: () => void;
 }
@@ -58,7 +59,7 @@ export default function About({ onOpenInquiry }: AboutProps) {
 
   return (
     <div>
-      <section className="bg-gradient-to-r from-green-900 to-green-700 py-20">
+      <section className="bg-green-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             About The Kobbari Company
@@ -74,7 +75,7 @@ export default function About({ onOpenInquiry }: AboutProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 lg:h-full min-h-[500px] rounded-lg overflow-hidden shadow-xl">
               <img
-                src="https://images.pexels.com/photos/4505166/pexels-photo-4505166.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={coprabags}
                 alt="Coconut Farm"
                 className="w-full h-full object-cover"
               />
@@ -201,7 +202,7 @@ export default function About({ onOpenInquiry }: AboutProps) {
 
             <div className="relative h-96 lg:h-auto rounded-lg overflow-hidden shadow-xl">
               <img
-                src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={coprafarming}
                 alt="Karnataka Coconut Belt"
                 className="w-full h-full object-cover"
               />

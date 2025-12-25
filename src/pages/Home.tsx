@@ -14,7 +14,7 @@ interface HomeProps {
   onOpenInquiry: () => void;
 }
 
-export default function Home({ onNavigate, onOpenInquiry }: HomeProps) {
+export default function Home({ onOpenInquiry }: HomeProps) {
 
 
   return (
