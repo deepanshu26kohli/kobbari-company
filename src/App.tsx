@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
-
+  const websiteDown = true
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -35,8 +35,19 @@ function App() {
       document.title = 'Contact Us - The Kobbari Company';
     }
   }, [currentPage]);
-
+  
   return (
+    <>
+    {
+      websiteDown ? <div className="min-h-screen bg-white">
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Website Down</h1>
+          <p className="text-lg">Sorry, this website is currently down.</p>
+        </div>
+      </div> 
+      </div>
+       : 
     <div className="min-h-screen bg-white">
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
 
@@ -62,6 +73,8 @@ function App() {
         onClose={handleCloseInquiry}
       />
     </div>
+      }
+      </>
   );
 }
 
