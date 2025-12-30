@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
-  const websiteDown = true
+  const websiteDown = false
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
